@@ -29,7 +29,7 @@ Note that this example installs Minio from source, you are on the edge, in produ
 
 To configure Minio, after it deploys the first time you would want to configure an access key and a secret key.
 
-````
+```
 platform variable:set env:MINIO_ACCESS_KEY youraccesskey
 platform variable:set env:MINIO_SECRET_KEY yourverysecuresecretkey_please_dont_keep_this_example_value
 ```
