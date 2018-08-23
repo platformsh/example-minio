@@ -1,0 +1,7 @@
+/.GOPATH
+.env
+/bin
+/data
+.DS_Store
+.minio
+vendor

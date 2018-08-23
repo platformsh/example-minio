@@ -1,0 +1,24 @@
+name: minio
+type: golang:1.10
+
+hooks:
+    build: 
+      go get -u github.com/minio/minio
+web:
+    upstream:
+        socket_family: tcp
+        protocol: http
+
+    commands:
+        start: |
+          ~/go/bin/minio server --address ":$PORT"  ~/data/files
+
+    locations:
+        /:
+            allow: false
+            passthru: true
+
+disk: 4800
+mounts:
+    '/data/files': 'shared:files/web-files'
+    '/.minio': 'shared:files/config'
